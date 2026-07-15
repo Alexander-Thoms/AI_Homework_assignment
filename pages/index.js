@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Head from 'next/head'
 
 export default function HomePage() {
   const [items, setItems] = useState([])
@@ -42,6 +43,9 @@ export default function HomePage() {
 
   return (
     <>
+      <Head>
+        <title>Store List</title>
+      </Head>
       <img
         src="/background.jpg"
         alt="Colorful abstract background"

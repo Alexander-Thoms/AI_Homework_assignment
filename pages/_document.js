@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Store List</title>
         <link rel="icon" href="/icon.png" />
         <link
           rel="stylesheet"

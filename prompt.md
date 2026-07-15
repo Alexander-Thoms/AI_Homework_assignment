@@ -41,6 +41,12 @@ These are the prompts I gave the AI assistant while building the app:
   image, plus the contrast styling in `_document.js`.
 
 ## 3. Manual Improvements / Corrections
+Changes I made to the AI-generated code:
+
+- Moved the page `<title>` out of `pages/_document.js` and into the page itself
+  using `next/head` in `pages/index.js`. This follows the Next.js best practice
+  of setting per-page `<head>` tags with `next/head`, while `_document.js` is
+  kept for document-wide structure (favicon and the Pico CSS stylesheet).
 
 
 ## Result
