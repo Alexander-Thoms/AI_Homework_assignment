@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    dirs: ['pages', 'components', 'lib', 'src'],
-  },
+  outputFileTracingRoot: __dirname,
 }
 
 module.exports = nextConfig
