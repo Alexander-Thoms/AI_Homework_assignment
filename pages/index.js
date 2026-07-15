@@ -93,10 +93,10 @@ export default function HomePage() {
 
       {items.length > 0 ? (
         <div className="list-actions">
-          <button type="button" className="secondary" onClick={printList}>
+          <button type="button" onClick={printList}>
             Print list
           </button>
-          <button type="button" className="contrast outline" onClick={clearAll}>
+          <button type="button" className="secondary" onClick={clearAll}>
             Clear all
           </button>
         </div>
