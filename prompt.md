@@ -55,6 +55,10 @@ Changes I made to the AI-generated code:
   `pages/_app.js`. Removed the inline `<style>` block from `pages/_document.js`
   and converted the inline JSX `style={{ ... }}` objects into reusable CSS
   classes.
+- Added a "Clear all" button (with a confirmation prompt) to remove every item at
+  once, and a "Print list" button that opens the browser print dialog. Added
+  `@media print` CSS so the background image, form, buttons and footer are hidden
+  and text prints in black for a clean printed shopping list.
 
 
 ## Result

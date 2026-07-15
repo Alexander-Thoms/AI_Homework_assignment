@@ -43,6 +43,17 @@ export default function HomePage() {
     setItems((current) => current.filter((item) => item.id !== id))
   }
 
+  function clearAll() {
+    if (items.length === 0) return
+    if (window.confirm('Remove all items from your list?')) {
+      setItems([])
+    }
+  }
+
+  function printList() {
+    window.print()
+  }
+
   return (
     <>
       <Head>
@@ -79,6 +90,17 @@ export default function HomePage() {
         }}
         onSubmit={addItem}
       />
+
+      {items.length > 0 ? (
+        <div className="list-actions">
+          <button type="button" className="secondary" onClick={printList}>
+            Print list
+          </button>
+          <button type="button" className="contrast outline" onClick={clearAll}>
+            Clear all
+          </button>
+        </div>
+      ) : null}
 
       <ItemList items={items} onRemove={removeItem} />
 
