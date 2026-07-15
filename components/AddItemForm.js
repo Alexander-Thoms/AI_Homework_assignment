@@ -1,11 +1,8 @@
 export default function AddItemForm({ name, error, maxLength, onNameChange, onSubmit }) {
   return (
     <>
-      <form
-        onSubmit={onSubmit}
-        style={{ display: 'flex', gap: '1rem', alignItems: 'flex-end', flexWrap: 'wrap' }}
-      >
-        <label htmlFor="item-name" style={{ flex: '1 1 240px', marginBottom: 0 }}>
+      <form onSubmit={onSubmit} className="add-item-form">
+        <label htmlFor="item-name" className="add-item-form__label">
           Item name
           <input
             type="text"
@@ -22,7 +19,7 @@ export default function AddItemForm({ name, error, maxLength, onNameChange, onSu
       </form>
 
       {error ? (
-        <p style={{ color: 'var(--pico-del-color, #d30000)' }}>
+        <p className="add-item-form__error">
           <small>{error}</small>
         </p>
       ) : null}

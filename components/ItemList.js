@@ -14,14 +14,7 @@ export default function ItemList({ items, onRemove }) {
       {items.map((item, index) => (
         <li key={item.id}>
           <article>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                gap: '1rem',
-              }}
-            >
+            <div className="item-list__row">
               <span>
                 {index + 1}. {item.name}
               </span>

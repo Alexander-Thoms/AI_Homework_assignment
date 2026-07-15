@@ -51,6 +51,10 @@ Changes I made to the AI-generated code:
   components, `components/AddItemForm.js` and `components/ItemList.js`. All state
   and logic (item list, `localStorage`, add/remove handlers) stays in the page,
   which passes data and callbacks down as props.
+- Moved all CSS into a dedicated `css/globals.css` file, imported through a new
+  `pages/_app.js`. Removed the inline `<style>` block from `pages/_document.js`
+  and converted the inline JSX `style={{ ... }}` objects into reusable CSS
+  classes.
 
 
 ## Result

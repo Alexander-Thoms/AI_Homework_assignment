@@ -51,14 +51,7 @@ export default function HomePage() {
       <img
         src="/background.jpg"
         alt="Colorful abstract background"
-        style={{
-          position: 'fixed',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          zIndex: -1,
-        }}
+        className="background-image"
       />
       <main className="container">
       <header>
