@@ -47,6 +47,10 @@ Changes I made to the AI-generated code:
   using `next/head` in `pages/index.js`. This follows the Next.js best practice
   of setting per-page `<head>` tags with `next/head`, while `_document.js` is
   kept for document-wide structure (favicon and the Pico CSS stylesheet).
+- Refactored the inline JSX in `pages/index.js` into two reusable presentational
+  components, `components/AddItemForm.js` and `components/ItemList.js`. All state
+  and logic (item list, `localStorage`, add/remove handlers) stays in the page,
+  which passes data and callbacks down as props.
 
 
 ## Result

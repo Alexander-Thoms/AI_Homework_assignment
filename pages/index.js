@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
+import AddItemForm from '../components/AddItemForm'
+import ItemList from '../components/ItemList'
 
 export default function HomePage() {
   const [items, setItems] = useState([])
@@ -74,70 +76,18 @@ export default function HomePage() {
         </small>
       </p>
 
-      <form
+      <AddItemForm
+        name={name}
+        error={error}
+        maxLength={MAX_LENGTH}
+        onNameChange={(value) => {
+          setError('')
+          setName(value)
+        }}
         onSubmit={addItem}
-        style={{ display: 'flex', gap: '1rem', alignItems: 'flex-end', flexWrap: 'wrap' }}
-      >
-        <label htmlFor="item-name" style={{ flex: '1 1 240px', marginBottom: 0 }}>
-          Item name
-          <input
-            type="text"
-            id="item-name"
-            name="item-name"
-            placeholder="e.g. Apples"
-            value={name}
-            maxLength={MAX_LENGTH}
-            onChange={(event) => {
-              setError('')
-              setName(event.target.value)
-            }}
-            required
-          />
-        </label>
-        <button type="submit">Add item</button>
-      </form>
+      />
 
-      {error ? (
-        <p style={{ color: 'var(--pico-del-color, #d30000)' }}>
-          <small>{error}</small>
-        </p>
-      ) : null}
-
-      {items.length === 0 ? (
-        <article>
-          <p>
-            <small>Your list is empty. Add an item above to get started.</small>
-          </p>
-        </article>
-      ) : (
-        <ul role="list">
-          {items.map((item, index) => (
-            <li key={item.id}>
-              <article>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    gap: '1rem',
-                  }}
-                >
-                  <span>
-                    {index + 1}. {item.name}
-                  </span>
-                  <button
-                    type="button"
-                    className="secondary outline"
-                    onClick={() => removeItem(item.id)}
-                  >
-                    Remove
-                  </button>
-                </div>
-              </article>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ItemList items={items} onRemove={removeItem} />
 
       <footer>
         <small>Built with Next.js + Pico CSS</small>
